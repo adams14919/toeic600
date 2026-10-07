@@ -5,9 +5,9 @@
 ## 內容
 
 - 單字 453 個（14 個主題），間隔複習
-- Part 1 照片 10 題、Part 2 應答 60 題、Part 3/4 對話與獨白 16 組
+- Part 1 照片 20 題、Part 2 應答 60 題、Part 3/4 對話與獨白 24 組
 - Part 5 句子填空 225 題、Part 6/7 閱讀 18 組（含雙篇、三篇）
-- 文法重點 13 項、迷你模擬測驗、錯題本、12 週計畫
+- 文法重點 13 項、弱點分析、迷你模擬測驗、錯題本、12 週計畫
 
 和 Claude 上的版本相比，獨立版**沒有 AI 批改與對話**，進度只存在這台裝置的瀏覽器裡。兩個版本之間可以用「設定 → 備份與轉移」的備份碼搬移進度。
 
@@ -36,10 +36,12 @@ python -m http.server 8600 --directory toeic600-pwa
 
 ## 更新內容
 
-App 的原始檔是上一層的 `toeic600.html`（同時也是 Claude 版）。修改後重新產生這個資料夾：
+App 的原始檔放在 `source/toeic600.html`（同時也是 Claude 版），產生器是 `source/build_pwa.py`。修改原始檔後，在 repository 根目錄重新產生：
 
 ```bash
-python build_pwa.py toeic600.html toeic600-pwa "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+python source/build_pwa.py source/toeic600.html . "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 ```
+
+最後一個參數是用來產生圖示的 Edge／Chrome 執行檔路徑。
 
 `sw.js` 的快取版本會跟著內容自動改變，使用者下次連網開啟時就會拿到新版。
