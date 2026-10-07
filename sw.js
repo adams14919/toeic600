@@ -1,5 +1,5 @@
 // TOEIC 600 衝刺本 service worker：頁面優先抓新版，斷線時用快取；字型與圖示快取優先
-const CACHE = 'toeic600-c9cb923b4f';
+const CACHE = 'toeic600-65007dbb14';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
